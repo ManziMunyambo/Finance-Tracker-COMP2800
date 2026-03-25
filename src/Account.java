@@ -5,6 +5,9 @@
  * -> This class is supposed to hold all current information, such as the user's current balance, as well as the balance over the current month. This gets updated manually by Service.java whenever a transaction is added.
  * 
  */
+
+ //There was an issue with GitHub not allowing me to push, so this is a comment as a test that's meant to see if I can still push. 
+
 import java.util.ArrayList;
 import java.time.LocalDate;
 
