@@ -49,7 +49,7 @@ public class Service {
     public ArrayList<Transaction> getByCategory(String category){
         ArrayList<Transaction> transactionsByCategory = new ArrayList<>();
         for(Transaction transaction : transactions){
-            if(transaction.getCategory().equals(category)){
+            if(transaction.getCategory().toLowerCase().equals(category.toLowerCase())){
                 transactionsByCategory.add(transaction);
             }
         }
@@ -60,7 +60,7 @@ public class Service {
     public ArrayList<Transaction> getByType(String type){
         ArrayList<Transaction> transactionsByType = new ArrayList<>();
         for(Transaction transaction : transactions){
-            if(transaction.getType().equals(type)){
+            if(transaction.getType().equalsIgnoreCase(type)){
                 transactionsByType.add(transaction);       
             }
         }
@@ -85,7 +85,7 @@ public class Service {
     public ArrayList<Transaction> getByTypeAndAmount(String type){
         ArrayList<Transaction> transactionsByTypeAndAmount = new ArrayList<>();
         for(Transaction transaction : transactions){
-            if(transaction.getType().equals(type)){
+            if(transaction.getType().equalsIgnoreCase(type)){
                 transactionsByTypeAndAmount.add(transaction);
             }
         }
