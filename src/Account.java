@@ -17,7 +17,7 @@ public class Account {
     //Updating the balance with the previous transactions from the database
     public void updatePrevTransactions(ArrayList<Transaction> transactions){
         for(Transaction transaction : transactions){
-            if(transaction.getType().equals("income")){
+            if(transaction.getType().equalsIgnoreCase("income")){
                 currentBalance += transaction.getAmount();
                 if(transaction.getDate().split("-")[1].equals(LocalDate.now().toString().split("-")[1])){ // If the transaction is from the current month, update the balance over this month as well
                     balanceOverThisMonth += transaction.getAmount();
@@ -35,7 +35,7 @@ public class Account {
 
     //Updating any new transactions to the balance
     public void update(double newAmount, String type){
-        if(type.equals("income")){
+        if(type.equalsIgnoreCase("income")){
             currentBalance += newAmount;
         }
         else{
@@ -43,7 +43,7 @@ public class Account {
         }
     }
     public void updateBalanceOverThisMonth(double newAmount, String type){
-        if(type.equals("income")){
+        if(type.equalsIgnoreCase("income")){
             balanceOverThisMonth += newAmount;
         }
         else{
